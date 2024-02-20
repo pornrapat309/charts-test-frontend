@@ -2,7 +2,9 @@ import PieCard from "../components/PieCard";
 import { useProduct } from "../hooks/use-product";
 
 export default function PieChart() {
-  const { categoryName, averageRatingArray } = useProduct();
+  const { averageRatingArray, categoryName } = useProduct();
+
+  console.log("categoryName ==> ", categoryName);
 
   const chartConfig = {
     type: "pie",
@@ -37,7 +39,7 @@ export default function PieChart() {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <>
       <PieCard chartConfig={chartConfig} />
       <PieCard chartConfig={chartConfig} />
       <PieCard chartConfig={chartConfig} />
@@ -47,6 +49,6 @@ export default function PieChart() {
       <PieCard chartConfig={chartConfig} />
       <PieCard chartConfig={chartConfig} />
       <PieCard chartConfig={chartConfig} />
-    </div>
+    </>
   );
 }

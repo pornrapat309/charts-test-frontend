@@ -6,7 +6,7 @@ export default function LineChart() {
 
   const chartConfig = {
     type: "line",
-    height: 240,
+    height: 300,
     series: [
       {
         name: "Rating(average)",
@@ -96,7 +96,7 @@ export default function LineChart() {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <>
       <LineCard chartConfig={chartConfig} />
       <LineCard chartConfig={chartConfig} />
       <LineCard chartConfig={chartConfig} />
@@ -106,6 +106,6 @@ export default function LineChart() {
       <LineCard chartConfig={chartConfig} />
       <LineCard chartConfig={chartConfig} />
       <LineCard chartConfig={chartConfig} />
-    </div>
+    </>
   );
 }

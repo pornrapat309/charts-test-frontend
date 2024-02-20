@@ -95,7 +95,7 @@ export default function BarChart() {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-4">
+    <>
       <BarCard chartConfig={chartConfig} />
       <BarCard chartConfig={chartConfig} />
       <BarCard chartConfig={chartConfig} />
@@ -105,6 +105,6 @@ export default function BarChart() {
       <BarCard chartConfig={chartConfig} />
       <BarCard chartConfig={chartConfig} />
       <BarCard chartConfig={chartConfig} />
-    </div>
+    </>
   );
 }
