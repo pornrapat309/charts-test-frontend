@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 export default function Header() {
   return (
-    <header className="flex gap-4 mt-3 ml-3">
+    <header className="flex gap-4 my-3 ml-3">
       <Link to="/">
         <Button>Line Charts</Button>
       </Link>

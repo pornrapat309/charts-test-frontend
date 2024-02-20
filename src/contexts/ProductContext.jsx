@@ -4,6 +4,7 @@ export const ProductContext = createContext();
 
 export default function ProductContextProvider({ children }) {
   const [dataProduct, setDataProduct] = useState([]);
+  const [initialLoading, setInitialLoading] = useState(true);
 
   useEffect(() => {
     fetchAllProduct();
@@ -17,6 +18,9 @@ export default function ProductContextProvider({ children }) {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setInitialLoading(false);
       });
   };
 
@@ -42,13 +46,13 @@ export default function ProductContextProvider({ children }) {
 
   const averageRatingArray = ratingNumber.map((numData) => {
     const average = calAvg(numData);
-    return average.toFixed(2);
+    return +average.toFixed(2);
   });
   console.log("averageRatingArray ==> ", averageRatingArray);
 
   return (
     <ProductContext.Provider
-      value={{ dataProduct, categoryName, averageRatingArray }}
+      value={{ dataProduct, categoryName, averageRatingArray, initialLoading }}
     >
       {children}
     </ProductContext.Provider>
