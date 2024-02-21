@@ -1,7 +1,6 @@
-- Create chart by material-tailwind
+- Create chart by material-tailwindcss
 
-* pnpm i
-
+* pnpm install
 * pnpm dev
 
 # React + Vite
